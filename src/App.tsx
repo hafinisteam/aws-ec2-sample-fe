@@ -6,7 +6,7 @@ import useSWR from 'swr'
 import axios from 'axios'
 import { useState } from 'react'
 
-const URL = 'http://localhost:3001/users'
+const URL = import.meta.env.PROD ? '/api/users' : 'http://localhost:3001/api/users'
 
 const fetcher = (url: string) => axios(url).then((res) => res.data)
 
